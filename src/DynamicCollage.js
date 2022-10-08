@@ -1,3 +1,4 @@
+
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
@@ -76,6 +77,7 @@ class DynamicCollage extends React.Component {
               collageOffsetX={collageOffsetX}
               collageOffsetY={collageOffsetY}
               imageFocusId={imageFocusId}
+              separatorStyle={this.props.separatorStyle}
               imageContainerStyle={this.props.imageContainerStyle}
               onImageFocus={(event) => this.setImageFocusId(event, m, i)}
               imageFocussedStyle={this.props.imageFocussedStyle}
@@ -302,17 +304,17 @@ class DynamicCollage extends React.Component {
     const boundries =
       direction === "row"
         ? {
-            lx: relativeContainerWidth * m,
-            ly: relativeContainerHeight * i,
-            ux: relativeContainerWidth * (m + 1),
-            uy: relativeContainerHeight * (i + 1),
-          }
+          lx: relativeContainerWidth * m,
+          ly: relativeContainerHeight * i,
+          ux: relativeContainerWidth * (m + 1),
+          uy: relativeContainerHeight * (i + 1),
+        }
         : {
-            lx: relativeContainerWidth * i,
-            ly: relativeContainerHeight * m,
-            ux: relativeContainerWidth * (i + 1),
-            uy: relativeContainerHeight * (m + 1),
-          };
+          lx: relativeContainerWidth * i,
+          ly: relativeContainerHeight * m,
+          ux: relativeContainerWidth * (i + 1),
+          uy: relativeContainerHeight * (m + 1),
+        };
 
     return { ...boundries, relativeContainerWidth, relativeContainerHeight };
   }
@@ -458,3 +460,5 @@ DynamicCollage.propTypes = {
 };
 
 export { DynamicCollage };
+
+
