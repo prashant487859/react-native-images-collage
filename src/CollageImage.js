@@ -544,6 +544,7 @@ class CollageImage extends React.Component {
       imageFocusId,
       imageFocussedStyle,
       imageContainerStyle,
+      separatorStyle
     } = this.props;
     const {
       panningX,
@@ -572,6 +573,7 @@ class CollageImage extends React.Component {
             ],
           },
           imageContainerStyle,
+          separatorStyle,
           imageFocusId === this.id ? imageFocussedStyle : null,
         ]}
       >
@@ -605,22 +607,22 @@ class CollageImage extends React.Component {
                 : 20,
               top:
                 this.props.editButtonPosition &&
-                this.props.editButtonPosition.includes("top")
+                  this.props.editButtonPosition.includes("top")
                   ? 0
                   : null,
               bottom:
                 this.props.editButtonPosition &&
-                this.props.editButtonPosition.includes("bottom")
+                  this.props.editButtonPosition.includes("bottom")
                   ? 0
                   : null,
               left:
                 this.props.editButtonPosition &&
-                this.props.editButtonPosition.includes("left")
+                  this.props.editButtonPosition.includes("left")
                   ? 0
                   : null,
               right:
                 this.props.editButtonPosition &&
-                this.props.editButtonPosition.includes("right")
+                  this.props.editButtonPosition.includes("right")
                   ? 0
                   : null,
             }}
@@ -659,3 +661,4 @@ CollageImage.propTypes = {
 };
 
 export default CollageImage;
+
